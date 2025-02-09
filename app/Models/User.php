@@ -58,4 +58,13 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+
+    public function isAdmin(){
+        return $this->adminstration_level == 2 ? true :  false ;
+    }
+
+    public function isSupperAdmin(){
+        return $this->adminstration_level == 1 ? true :  false ;
+    }
 }
